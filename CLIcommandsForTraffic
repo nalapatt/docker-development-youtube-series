@@ -1,0 +1,7 @@
+to add traffic to the server 
+
+kubectl exec -it traffic-generator sh
+apk add --no-cache wrk
+wrk -c 5 -t 5 -d 99999 -H "Connection: Close" http://application-cpu
+exit
+
